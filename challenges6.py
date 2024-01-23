@@ -1,20 +1,13 @@
 while True:
-    ("Menu:")
-    print ("y to multipy by 2 again")
-    print("n to stop multiplying")
-
-    choice = (input("Please enter choice(y/n): "))
-    if choice == "y":
+    try:
+        user_input = float(input("Enter a number: "))
+        answer = input("Do you want to double the number? (y/n): ").lower()
         while True:
-            number = (int(input("please input a number you wish to multiply: ")))
-            if number != 1:
-                print ('please enter correct number')
+            if answer == 'y':
+                user_input *= 2
+                print(f"The doubled number is: {user_input}")
             else:
-                mult = number*2
-                print("the answer is:",mult,)
+                print("thanks for using program!")
                 break
-    elif choice =="n":
-        print("thanks for using this program")
-        break
-    else: 
-        print("please enter y or n")
+    except ValueError:
+        print("Invalid input. Please enter a valid number.")
